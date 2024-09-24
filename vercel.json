@@ -1,0 +1,17 @@
+{
+"rewrites": [
+    {
+    "source": "/api/(.*)",     
+    "destination": "/api/$1"
+    },
+    {
+    "source": "/",  
+    "destination": "/index.html"
+    }
+],
+"functions": {
+    "api/twitter.js": {
+    "runtime": "nodejs14.x"
+    }
+}
+} 
