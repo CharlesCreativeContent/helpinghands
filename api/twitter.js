@@ -3,6 +3,7 @@ const express = require('express');
 const fetch = require('node-fetch');
 const cors = require('cors');
 require('dotenv').config();
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,7 +14,7 @@ app.use(cors());
 // To parse JSON data
 app.use(express.json());
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
  app.get('/api/twitter/:username', async (req, res) => {
     const { username } = req.params;
@@ -26,7 +27,6 @@ app.get("/", (req, res) => res.send("Express on Vercel"));
                 Authorization: `Bearer ${bearerToken}`
             }
         });
-
         if (!response.ok) {
             throw new Error('Twitter API request failed');
         }
