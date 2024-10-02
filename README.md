@@ -1,6 +1,3 @@
-Here is a basic `README.md` file for your GitHub repository based on the information available:
-
-```markdown
 # HelpingHands
 
 HelpingHands is an application designed to assist hosts in managing a queue of speakers during their events on Twitter. This tool helps streamline the process of speaker management, making it easier for event hosts to keep track of who is next to speak.
@@ -57,7 +54,3 @@ Feel free to fork this repository and make pull requests. For major changes, ple
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-```
-
-You can customize this README further based on any additional details you'd like to include.
