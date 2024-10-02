@@ -151,7 +151,7 @@
         async function fetchUserInfo(username) {
             try {
 
-                const response = await fetch(`https://helpinghands-nine.vercel.app/api/twitter/`+username);
+                const response = await fetch(`https://handhelper.vercel.app/api/twitter/`+username);
                 if (!response.ok) {
                     let dummyInfo = {
                         username,
