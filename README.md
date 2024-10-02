@@ -2,8 +2,12 @@
 
 HelpingHands is an application designed to assist hosts in managing a queue of speakers during their events on Twitter. This tool helps streamline the process of speaker management, making it easier for event hosts to keep track of who is next to speak.
 
-## Live Demo
-You can check out the live demo of the project here: [HelpingHands Live Demo](https://helpinghandsnine.vercel.app)
+
+## [Live Demo](https://shawncharles.com/hands)
+
+<a href="https://shawncharles.com/hands">
+<img src="https://github.com/CharlesCreativeContent/myImages/blob/main/images/Screenshot%202024-10-01%20222115.png?raw=true">
+</a>
 
 ## Features
 - Queue management for speakers at events
@@ -31,7 +35,7 @@ To run the project locally, follow these steps:
    ```
 4. Start the development server:
    ```bash
-   npm start
+   node api/twitter.js
    ```
 
 ## Project Structure
@@ -39,7 +43,7 @@ To run the project locally, follow these steps:
 ```
 helpinghands/
 │
-├── api/
+├── api/twitter.js
 ├── index.html
 ├── package.json
 ├── package-lock.json
