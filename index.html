@@ -18,11 +18,20 @@
             color: red;
             clear:left
         }
-        h5{
+        h4{
             float:left;
         }
+
+        br{
+            clear:both;
+        }
+
         .card-title, a{
             color: white !important;
+        }
+        .card-top{
+            width: 100%;
+            height: fit-content;
         }
         .pfp{
             height: 2em;
@@ -37,24 +46,64 @@
             float:left;
             margin: 1em;
         }
-        .btn{
-            height:100%;
-        }
         .logo {
-            max-height: 25vh;
+            height: 25vh;
         }
         #twitterForm{
+            width: max-content;
             position: relative;
-            left: 17.5vw;
-            width: 60vw;
+            padding: auto;
+            left: 12%;
         }
+
+        #twitterForm input{
+            width: 42vw;
+        }
+
+        
+
+@media screen and (min-width: 1000px) {
+
+#twitterForm input{
+    width: 58vw;
+}
+    }
+
+        
+
+    @media screen and  (max-width: 1000px) {
+
+#twitterForm input{
+    width: 50vw;
+}
+    }
+
+    @media screen and  (max-width: 750px) {
+
+#twitterForm input{
+    width: 43vw;
+}
+    }
+
+    
+    @media screen and  (max-width: 501px) {
+
+#twitterForm input{
+    width: 42vw;
+}
+
+.card{
+    width: calc(100vw - 2em);
+}
+
+} 
     </style>
 </head>
 <body>
     <img class="logo" src="https://github.com/CharlesCreativeContent/myImages/blob/main/images/helpinhands.png?raw=true">
-    <section class="logo" id="twitterForm">
+    <section>
 
-<div id="twitterForm" class="input-group mb-3 logo">
+<div id="twitterForm" class="input-group mb-3">
     <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Username:</span>
     </div>
@@ -85,6 +134,7 @@
 
         function clearError(text=""){
             errorDiv.innerHTML = text
+            userInput.value = ""
         }
         
         function getUserInfo() {
@@ -134,13 +184,14 @@
             let currentLength = document.querySelectorAll(".card").length
             console.log("currentLength: ",currentLength)
             userInfoDiv.innerHTML =  userInfoDiv.innerHTML + `
-                    <div class="card text-white bg-primary mb-3" >
+                    <div class="card text-white bg-primary mb-3 card-top" >
                         
                         <div class="card-header">
                         <a target="_blank" href="https://x.com/${username}">
                             <img class="pfp" src="${profile_image_url}" alt="avatar">  
                             <h4 class="card-title">${name}</h4>
                         </a>
+                        <br>
                         <button class="btn btn-outline-light" data-toggle="collapse" href="#More${personalID}" role="button" aria-expanded="false" aria-controls="More${personalID}">
                             More
                         </button>
