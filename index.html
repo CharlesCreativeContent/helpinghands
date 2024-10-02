@@ -180,12 +180,13 @@
         function displayUserInfo(data) {
             console.log(data)
             let personalID = Math.ceil(Math.random()*100000)
+            let cardColor = randomColor()
             const { username, id, name, description, most_recent_tweet_id, profile_image_url, public_metrics } = data;
             let properName = name.split(" ").map(el=>el[0].toUpperCase()+ el.slice(1)).join(" ")
             let currentLength = document.querySelectorAll(".card").length
             console.log("currentLength: ",currentLength)
             userInfoDiv.innerHTML =  userInfoDiv.innerHTML + `
-                    <div class="card text-white bg-primary mb-3 card-top" >
+                    <div class="card text-white bg-${cardColor} mb-3 card-top" >
                         
                         <div class="card-header">
                         <a target="_blank" href="https://x.com/${username}">
@@ -284,6 +285,15 @@
                 "I have a degree in computer science but still can't fix your printer.",
                 "Hello World is my native language.",
                 "I code, therefore I am."][Math.floor(Math.random()*50)]
+
+        let randomColor = ()=>[
+            "primary",
+            "secondary",
+            "success",
+            "warning",
+            "info",
+            "dark"
+        ][Math.floor(Math.random()*6)]
         
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
