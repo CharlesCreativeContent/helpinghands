@@ -181,6 +181,7 @@
             console.log(data)
             let personalID = Math.ceil(Math.random()*100000)
             const { username, id, name, description, most_recent_tweet_id, profile_image_url, public_metrics } = data;
+            let properName = name.split(" ").map(el=>el[0].toUpperCase()+ el.slice(1)).join(" ")
             let currentLength = document.querySelectorAll(".card").length
             console.log("currentLength: ",currentLength)
             userInfoDiv.innerHTML =  userInfoDiv.innerHTML + `
@@ -189,7 +190,7 @@
                         <div class="card-header">
                         <a target="_blank" href="https://x.com/${username}">
                             <img class="pfp" src="${profile_image_url}" alt="avatar">  
-                            <h4 class="card-title">${name}</h4>
+                            <h4 class="card-title">  ${properName}</h4>
                         </a>
                         <br>
                         <button class="btn btn-outline-light" data-toggle="collapse" href="#More${personalID}" role="button" aria-expanded="false" aria-controls="More${personalID}">
